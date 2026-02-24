@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyJZ8DGxmMrI1ynZsbYQbaqM7qGp4De5-fpaO6UU7dj4n8_ONkoo8J-4dKTM7VIrw4NnA/exec";
+  var GAS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyzdbUTkYplaed2_GYYbaGb1-B71hufZxYhvXLNEkuwl24AAjXpILKynVjtLYIxSjUXfA/exec";
 
   var SUCCESS_MESSAGE = "상담신청이 접수되었습니다. 곧 연락드리겠습니다.";
   var FAILURE_MESSAGE = "전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
