@@ -30,8 +30,8 @@
         <span class="consult-form-title">빠른 상담신청</span>
         <div class="consult-form-group">
           <div class="consult-form">
-            <input type="text" placeholder="이름" aria-label="이름">
-            <input type="tel" placeholder="연락처" aria-label="연락처">
+            <input type="text" placeholder="이름" aria-label="이름" pattern="[A-Za-z가-힣]+">
+            <input type="tel" placeholder="연락처" aria-label="연락처" inputmode="numeric" maxlength="11" pattern="010[0-9]{8}">
           </div>
           <label class="consult-privacy">
             <input type="checkbox" class="consult-privacy-check">
@@ -83,3 +83,6 @@
     </div>
   </div>
 </div>
+
+
+

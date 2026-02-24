@@ -563,6 +563,35 @@ body {
   white-space: nowrap;
 }
 
+/* Icon-font fallback fix */
+.properties-N3 .modalset .modalset-header .modalset-close {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  color: var(--text-color1);
+}
+
+.properties-N3 .modalset .modalset-header .modalset-close::before,
+.properties-N3 .modalset .modalset-header .modalset-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.4rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.properties-N3 .modalset .modalset-header .modalset-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.properties-N3 .modalset .modalset-header .modalset-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .fixed-consult-bar.is-split .privacy-detail-btn {
   border: 0;
   background: none;

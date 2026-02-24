@@ -1504,11 +1504,49 @@ html, body { margin: 0 !important; padding: 0 !important
   }
 }
 /* properties-N9 */
+/* Icon-font fallback fix */
 .properties-N9 {
   overflow: hidden;
   position: relative;
   padding-top: 3rem;
   padding-bottom: 8rem
+}
+.properties-N9 .checkset.checkset-fill .checkset-input:checked+.checkset-label::after {
+  content: "";
+  left: 0.72rem;
+  top: 50%;
+  width: 0.46rem;
+  height: 0.84rem;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translateY(-58%) rotate(45deg);
+  font-family: inherit !important;
+  font-size: 0
+}
+.properties-N9 .modalset .modalset-header .modalset-close {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  color: var(--text-color1)
+}
+.properties-N9 .modalset .modalset-header .modalset-close::before,
+.properties-N9 .modalset .modalset-header .modalset-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.4rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px
+}
+.properties-N9 .modalset .modalset-header .modalset-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: var(--text-color1)
+}
+.properties-N9 .modalset .modalset-header .modalset-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg)
 }
 .properties-N9 .contents-inner {
   width: 100%
@@ -1700,9 +1738,6 @@ html, body { margin: 0 !important; padding: 0 !important
   border-color: var(--white);
   color: var(--white)
 }
-.properties-N9 .modalset .modalset-close::before {
-  color: var(--text-color1)
-}
 @media (max-width: 992px) {
   .properties-N9 {
     padding-top: 2.4rem;
@@ -1751,6 +1786,7 @@ html, body { margin: 0 !important; padding: 0 !important
 /* ==========================================
    FIXED CONSULT BAR (SPLIT LAYOUT)
    ========================================== */
+/* Icon-font fallback fix */
 /* Prevent clipping on narrow desktop widths */
 .properties-N3 {
   padding-top: 0;
@@ -2103,6 +2139,30 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap
+}
+.properties-N3 .modalset .modalset-header .modalset-close {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+  color: var(--text-color1)
+}
+.properties-N3 .modalset .modalset-header .modalset-close::before,
+.properties-N3 .modalset .modalset-header .modalset-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.4rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px
+}
+.properties-N3 .modalset .modalset-header .modalset-close::before {
+  transform: translate(-50%, -50%) rotate(45deg)
+}
+.properties-N3 .modalset .modalset-header .modalset-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg)
 }
 .fixed-consult-bar.is-split .privacy-detail-btn {
   border: 0;

@@ -12,14 +12,14 @@
             <div class="inputset">
               <label for="properties-N9-inputset-a-1" class="form-tit">성함 <span>*</span>
               </label>
-              <input id="properties-N9-inputset-a-1" type="text" name="성함" class="inputset-input form-control" placeholder="성함을 입력해주세요." required="">
+              <input id="properties-N9-inputset-a-1" type="text" name="성함" class="inputset-input form-control" placeholder="성함을 입력해주세요." pattern="[A-Za-z가-힣]+" required="">
             </div>
           </div>
           <div class="form-box">
             <div class="inputset">
               <label for="properties-N9-inputset-a-2" class="form-tit">휴대폰 번호 <span>*</span>
               </label>
-              <input id="properties-N9-inputset-a-2" type="tel" name="휴대폰 번호" class="inputset-input form-control" placeholder="-를 제외한 숫자만 입력해 주세요." required="">
+              <input id="properties-N9-inputset-a-2" type="tel" name="휴대폰 번호" class="inputset-input form-control" placeholder="-를 제외한 숫자만 입력해 주세요." inputmode="numeric" maxlength="11" pattern="010[0-9]{8}" required="">
             </div>
           </div>
           <div class="form-box">
@@ -91,3 +91,6 @@
     </div>
   </div>
 </section>
+
+
+
