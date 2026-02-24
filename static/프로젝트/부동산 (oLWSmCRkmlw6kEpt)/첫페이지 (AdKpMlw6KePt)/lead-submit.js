@@ -14,7 +14,6 @@
   var NAME_PATTERN = /^[A-Za-z\uAC00-\uD7A3]+$/;
   var PHONE_PATTERN = /^010\d{8}$/;
 
-  var quickWidgetId = null;
   var consultWidgetId = null;
 
   function qs(selector, root) {
@@ -99,25 +98,8 @@
 
       clearInterval(timer);
 
-      var quickContainer = qs("#ts-quick");
       var consultContainer = qs("#ts-consult");
-      var quickTokenInput = qs("#quick_ts_token");
       var consultTokenInput = qs("#consult_ts_token");
-
-      if (quickContainer) {
-        quickWidgetId = window.turnstile.render(quickContainer, {
-          sitekey: TURNSTILE_SITE_KEY,
-          callback: function (token) {
-            if (quickTokenInput) quickTokenInput.value = token || "";
-          },
-          "expired-callback": function () {
-            if (quickTokenInput) quickTokenInput.value = "";
-          },
-          "error-callback": function () {
-            if (quickTokenInput) quickTokenInput.value = "";
-          }
-        });
-      }
 
       if (consultContainer) {
         consultWidgetId = window.turnstile.render(consultContainer, {
@@ -290,7 +272,6 @@
     var phoneInput = qs(".consult-form input[type='tel']", bar);
     var agreeInput = qs(".consult-privacy-check", bar);
     var submitBtn = qs(".consult-submit", bar);
-    var tokenInput = qs("#quick_ts_token", bar);
     var honeypotInput = qs("#quick-honeypot", bar);
 
     if (!submitBtn) return;
@@ -327,18 +308,11 @@
         event.preventDefault();
         event.stopPropagation();
 
-        var tsToken = tokenInput ? String(tokenInput.value || "").trim() : "";
-        if (hasValidSiteKey() && !tsToken) {
-          alert(CAPTCHA_REQUIRED_MESSAGE);
-          return;
-        }
-
         var payload = {
           source: "quick_bar",
           name: sanitizeName(nameInput ? nameInput.value : ""),
           phone: sanitizePhone(phoneInput ? phoneInput.value : ""),
           agree: !!(agreeInput && agreeInput.checked),
-          turnstileToken: tsToken,
           honeypot: honeypotInput ? String(honeypotInput.value || "").trim() : ""
         };
 
@@ -362,10 +336,8 @@
           if (phoneInput) phoneInput.value = "";
           if (agreeInput) agreeInput.checked = false;
           if (honeypotInput) honeypotInput.value = "";
-          resetTurnstile(quickWidgetId, tokenInput);
         } catch (error) {
           alert(error && error.message ? error.message : FAILURE_MESSAGE);
-          resetTurnstile(quickWidgetId, tokenInput);
         } finally {
           setLoading(submitBtn, false);
         }
