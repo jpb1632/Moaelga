@@ -170,7 +170,8 @@
 
 .menupage-content-title-wrap,
 .menupage-content-lead,
-.menupage-canvas {
+.menupage-canvas,
+.menupage-variant-tabs {
   will-change: transform, opacity;
 }
 
@@ -208,17 +209,57 @@
 }
 
 .menupage-reveal-left {
-  animation: menupageFadeInLeft 2.05s cubic-bezier(0.22, 0.61, 0.2, 1) both;
+  animation: menupageFadeInLeft 2.4s cubic-bezier(0.22, 0.61, 0.2, 1) both;
 }
 
 .menupage-reveal-right {
-  animation: menupageFadeInRight 2.05s cubic-bezier(0.22, 0.61, 0.2, 1) both;
-  animation-delay: 0.28s;
+  animation: menupageFadeInRight 2.4s cubic-bezier(0.22, 0.61, 0.2, 1) both;
+  animation-delay: 0.36s;
 }
 
 .menupage-reveal-up {
-  animation: menupageFadeInUp 2.05s cubic-bezier(0.22, 0.61, 0.2, 1) both;
-  animation-delay: 0.56s;
+  animation: menupageFadeInUp 2.4s cubic-bezier(0.22, 0.61, 0.2, 1) both;
+  animation-delay: 0.72s;
+}
+
+.menupage-variant-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2.8rem;
+  margin-bottom: 2.2rem;
+}
+
+.menupage-variant-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.9rem;
+  padding: 0 2rem;
+  border: 0.2rem solid #d3dee8;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #183963;
+  font-size: 2.05rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-family: inherit;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menupage-variant-tab:hover {
+  border-color: #102f5b;
+  color: #102f5b;
+}
+
+.menupage-variant-tab.is-active {
+  background: #102f5b;
+  border-color: #102f5b;
+  color: #fff;
 }
 
 .menupage-canvas {
@@ -231,10 +272,113 @@
   overflow: hidden;
 }
 
+.menupage-canvas.has-variant-tabs {
+  margin-top: 0;
+}
+
+.menupage-canvas.menupage-swap-up {
+  animation: menupageFadeInUp 2.4s cubic-bezier(0.22, 0.61, 0.2, 1) both;
+}
+
 .menupage-canvas.has-image {
   border: 0;
   background: transparent;
   box-shadow: 0 1rem 2.6rem rgba(22, 38, 64, 0.12);
+}
+
+.menupage-canvas.has-route-map {
+  border: 1px solid #ccd5e2;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1rem 2.6rem rgba(22, 38, 64, 0.12);
+  min-height: 0;
+}
+
+.menupage-route-map-wrap {
+  width: 100%;
+}
+
+.menupage-route-map-node {
+  width: 100%;
+  min-height: 36rem;
+}
+
+.menupage-route-map-wrap .root_daum_roughmap .cont {
+  display: none !important;
+}
+
+.menupage-route-map-wrap .wrap_map {
+  width: 100% !important;
+}
+
+.menupage-route-map-info {
+  border-top: 1px solid #d5dde8;
+  background: #f3f5f8;
+  padding: 1.3rem 1.8rem;
+}
+
+.menupage-route-map-info-row {
+  margin: 0;
+  color: #2f3f57;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 1.55rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.menupage-route-map-info-row + .menupage-route-map-info-row {
+  margin-top: 0.35rem;
+}
+
+.menupage-route-map-info-icon {
+  width: 1.65rem;
+  height: 1.65rem;
+  flex: 0 0 1.65rem;
+  margin-top: 0.14rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem 1.5rem;
+  font-size: 0;
+  line-height: 0;
+}
+
+.menupage-route-map-info-icon.is-map {
+  transform: translateX(-0.04rem) scale(1.22);
+  transform-origin: center center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232d3c56' d='M12 2a6 6 0 0 0-6 6c0 4.66 6 12 6 12s6-7.34 6-12a6 6 0 0 0-6-6Zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5Z'/%3E%3C/svg%3E");
+}
+
+.menupage-route-map-info-icon.is-home {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232d3c56' d='m12 3 9 7v11h-6v-6H9v6H3V10l9-7Z'/%3E%3C/svg%3E");
+}
+
+.menupage-route-map-info-icon.is-phone {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232d3c56' d='M2.25 4.5A2.25 2.25 0 0 1 4.5 2.25h2.25a2.25 2.25 0 0 1 2.146 1.57l1.004 3.011a2.25 2.25 0 0 1-.992 2.567l-1.21.806a11.972 11.972 0 0 0 5.516 5.516l.806-1.21a2.25 2.25 0 0 1 2.567-.992l3.011 1.004A2.25 2.25 0 0 1 21.75 17.25V19.5a2.25 2.25 0 0 1-2.25 2.25h-.75C9.723 21.75 2.25 14.277 2.25 5.25V4.5Z'/%3E%3C/svg%3E");
+}
+
+.menupage-route-map-info-row.is-address .menupage-route-map-info-icon {
+  margin-top: 0.24rem;
+}
+
+.menupage-route-map-info-row.is-inquiry .menupage-route-map-info-icon {
+  margin-top: 0.24rem;
+}
+
+.menupage-route-map-info-row.is-inquiry {
+  align-items: flex-start;
+}
+
+.menupage-route-map-info-text {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.menupage-route-map-info-label {
+  color: #1a3358;
+  font-weight: 600;
 }
 
 .menupage-canvas img {
@@ -490,6 +634,61 @@
     min-height: 24rem;
   }
 
+  .menupage-route-map-node {
+    min-height: 30rem;
+  }
+
+  .menupage-route-map-info {
+    padding: 1.1rem 1.3rem;
+  }
+
+  .menupage-route-map-info-row {
+    gap: 0.45rem;
+    font-size: 1.32rem;
+    line-height: 1.4;
+  }
+
+  .menupage-route-map-info-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    flex-basis: 1.3rem;
+    background-size: 1.18rem 1.18rem;
+    margin-top: 0.12rem;
+  }
+
+  .menupage-route-map-info-icon.is-map {
+    transform: translateX(-0.02rem) scale(1.16);
+    transform-origin: center center;
+  }
+
+  .menupage-route-map-info-row.is-address .menupage-route-map-info-icon,
+  .menupage-route-map-info-row.is-inquiry .menupage-route-map-info-icon {
+    margin-top: 0.16rem;
+  }
+
+  .menupage-variant-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.6rem;
+    padding: 0 0.2rem;
+  }
+
+  .menupage-variant-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menupage-variant-tab {
+    flex: 0 0 auto;
+    min-height: 3.3rem;
+    padding: 0 1.6rem;
+    font-size: 1.72rem;
+    white-space: nowrap;
+  }
+
   .menupage-spec {
     margin-top: 2rem;
   }
@@ -528,7 +727,8 @@
 @media (prefers-reduced-motion: reduce) {
   .menupage-reveal-left,
   .menupage-reveal-right,
-  .menupage-reveal-up {
+  .menupage-reveal-up,
+  .menupage-canvas.menupage-swap-up {
     animation: none !important;
   }
 }
