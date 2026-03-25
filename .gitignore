@@ -19,6 +19,7 @@ coverage/
 
 # editor / OS
 .vscode/
+.claude/
 .DS_Store
 Thumbs.db
 

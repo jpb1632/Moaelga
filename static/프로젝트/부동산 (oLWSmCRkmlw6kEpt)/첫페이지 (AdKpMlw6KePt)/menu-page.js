@@ -33,9 +33,9 @@
       ],
     },
     route: {
-      label: "오시는길",
+      label: "공공지원 민간임대",
       topIndex: 3,
-      tabs: [{ key: "directions", label: "오시는길" }],
+      tabs: [{ key: "directions", label: "공공지원 민간임대" }],
     },
   };
 
@@ -197,8 +197,8 @@
     route: {
       default: {
         title: "양주 백석 모아엘가 그랑데",
-        subtitle: "양주의 NEW CITY",
-        copy: "백석지구 첫 프리미엄! 자부심을 선점하라!",
+        subtitle: "주거의 새로운 패러다임",
+        copy: "합리적인 임대료로 10년까지 보장!",
         copySub: "",
         image: "",
         specs: [],
@@ -436,7 +436,7 @@
     const mapNode = document.createElement("div");
     mapNode.id = `daumRoughmapContainer${ROUTE_ROUGHMAP.timestamp}`;
     mapNode.className = "root_daum_roughmap root_daum_roughmap_landing menupage-route-map-node";
-    mapNode.setAttribute("aria-label", imageAlt || "오시는길 지도");
+    mapNode.setAttribute("aria-label", imageAlt || "공공지원 민간임대 안내 지도");
     mapWrap.appendChild(mapNode);
 
     const mapInfo = document.createElement("div");

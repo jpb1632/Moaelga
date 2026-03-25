@@ -785,7 +785,7 @@ html, body { margin: 0 !important; padding: 0 !important; }
 
   .properties-N1.block-active .header-center {
     pointer-events: auto;
-  }
+  }roperties-N1 .header-gnb {
 
   .properties-N1.block-active .header-title {
     display: flex;
