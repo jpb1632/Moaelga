@@ -33,9 +33,9 @@
       ],
     },
     route: {
-      label: "공공지원 민간임대",
+      label: "오시는길",
       topIndex: 3,
-      tabs: [{ key: "directions", label: "공공지원 민간임대" }],
+      tabs: [{ key: "directions", label: "오시는길" }],
     },
   };
 
@@ -436,7 +436,7 @@
     const mapNode = document.createElement("div");
     mapNode.id = `daumRoughmapContainer${ROUTE_ROUGHMAP.timestamp}`;
     mapNode.className = "root_daum_roughmap root_daum_roughmap_landing menupage-route-map-node";
-    mapNode.setAttribute("aria-label", imageAlt || "공공지원 민간임대 안내 지도");
+    mapNode.setAttribute("aria-label", imageAlt || "오시는길 안내 지도");
     mapWrap.appendChild(mapNode);
 
     const mapInfo = document.createElement("div");
