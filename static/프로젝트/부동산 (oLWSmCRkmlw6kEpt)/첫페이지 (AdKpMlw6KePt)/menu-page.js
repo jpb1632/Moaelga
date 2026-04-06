@@ -197,8 +197,8 @@
     route: {
       default: {
         title: "양주 백석 모아엘가 그랑데",
-        subtitle: "주거의 새로운 패러다임",
-        copy: "합리적인 임대료로 10년까지 보장!",
+        subtitle: "양주의 NEW CITY",
+        copy: "백석지구 첫 프리미엄! 자부심을 선점하라!",
         copySub: "",
         image: "",
         specs: [],
